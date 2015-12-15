@@ -1,16 +1,29 @@
 package MyPack;
 
 public class Laptop extends Computer{
-	String bag = "bag";
+	String accesories = "bag";
 
 	Laptop(int powerSuply, int ram, String mainboard, String videocard, String bag) {
-		super(powerSuply, ram, mainboard, videocard);
-		this.bag = bag;
+		this.powerSuply = powerSuply;
+		this.ram = ram;
+		this.mainboard = mainboard;
+		this.videocard = videocard;	
+		this.accesories = bag;
 	}
 
 	@Override
-	void print() {
-		System.out.println("Laptop includes: " + powerSuply + "W powerSuply; " + ram + " RAM; " + "Mainboard " + mainboard + "; Videocard " 
-				+ videocard + "; and only laptop have " + bag + " for its carry");			
-				}	
+	public void powerSwitch() {// скрыл реализацию ибо state берется в другом классе которого нет в данном примере, но суть думаю понятна
+				/*if(state == 1){
+					System.out.println("Switch turn on");
+				}
+				else{
+					System.out.println("Switch turn off");
+				}*/
+	}
+
+	@Override
+	public String toString() {
+	        return "Laptop includes: " + powerSuply + "W powerSuply; " + ram + " RAM; " + "Mainboard " + mainboard + "; Videocard " 
+					+ videocard + "; and only laptop have " + accesories + " for its carry";
+	}
 }
